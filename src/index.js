@@ -1,33 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory, Link } from 'react-router'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
+import App from './App';
+import About from './About';
+import Contact from './Contact';
+import './index.css';
+const app = document.getElementById('root');
 
-let Index = function(){
-  return (
-    <div>
-    <Link to="/Other">Other</Link>
-    <p></p>
-    <code>This is the Index</code>
-    <p></p>
-    </div>
-  )
-}
-
-
-let Other = function(){
-  return (
-    <div>
-    <Link to="/">Index</Link>
-    <p></p>
-    <code>This is the Other</code>
-    </div>
-  )
-}
-
-ReactDOM.render((
+ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={Index} />
-    <Route path="/Other" component={Other} />
-  </Router>),
-document.getElementById('root'))
+    <Route path="/" component={App}>
+      {/* <IndexRoute component={App}></IndexRoute> */}
+      <Route path="contact" component={Contact} />
+      <Route path="About" component={About} />
+    </Route>
+  </Router>, app);
