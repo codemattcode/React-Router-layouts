@@ -1,11 +1,12 @@
 .app-wrapper {
-  padding: 40px;
+  padding: 10px 40px 0;
 }
 .link {
-  padding: 20px;
+  padding: 0 20px 0 0;
 }
 .footer {
   position: fixed;
   bottom: 0;
-  right: 0;
+  text-align: center;
+  width: 100%;
 }
